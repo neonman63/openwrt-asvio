@@ -1250,8 +1250,7 @@ static struct lp55xx_device_config lp5569_cfg = {
 	.dev_attr_group     = &lp5569_group,
 };
 
-static int lp5569_probe(struct i2c_client *client,
-			const struct i2c_device_id *id)
+static int lp5569_probe(struct i2c_client *client)
 {
 	int ret;
 	struct lp55xx_chip *chip;
@@ -1295,8 +1294,6 @@ static int lp5569_probe(struct i2c_client *client,
 	ret = lp55xx_init_device(chip);
 	if (ret)
 		goto err_init;
-
-	dev_info(&client->dev, "%s Programmable led chip found\n", id->name);
 
 	ret = lp55xx_register_leds(led, chip);
 	if (ret)
