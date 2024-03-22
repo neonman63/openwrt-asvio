@@ -19,11 +19,11 @@ Signed-off-by: Robert Marko <robimarko@gmail.com>
 
 --- a/arch/arm64/boot/dts/qcom/ipq8074.dtsi
 +++ b/arch/arm64/boot/dts/qcom/ipq8074.dtsi
-@@ -86,6 +86,16 @@
+@@ -85,6 +85,16 @@
  		#size-cells = <2>;
  		ranges;
  
-+		nss@40000000 {
++		nss_region: nss@40000000 {
 +			no-map;
 +			reg = <0x0 0x40000000 0x0 0x01000000>;
 +		};
@@ -36,7 +36,7 @@ Signed-off-by: Robert Marko <robimarko@gmail.com>
  		bootloader@4a600000 {
  			reg = <0x0 0x4a600000 0x0 0x400000>;
  			no-map;
-@@ -108,6 +118,21 @@
+@@ -107,6 +117,21 @@
  			reg = <0x0 0x4ac00000 0x0 0x400000>;
  			no-map;
  		};
